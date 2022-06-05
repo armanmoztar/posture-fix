@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+
+    "name": "PostureFix",
+    "version": "0.1.0",
+    "author": "Arman Moztarzadeh",
+    "description": "This extention alerts you to fix your posture using a built-in timer.",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+            "default_icon": "icon128.png",
+            "default_popup": "popup.html",
+            "default_title": "PostureFix"
+        },
+    "icons": {
+            "128": "images/icon128.png",
+            "18": "images/icon18.png"
+    },
+    "content_scripts": [ {
+        "matches": ["<all_urls>"],
+        "js": ["app.js"],
+        "css": []
+    } ],
+    "permissions": [
+        "notifications",
+        "activeTab"
+    ]
+}
