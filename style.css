@@ -1,3 +1,11 @@
-.h1{
-text-align: center;
+    .center {
+        display: inline-block;
+        padding-right: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40px; 
+        height: 40px;
+    }
+body {
+    background-color: rgba(242, 248, 249, 0.8)
 }
