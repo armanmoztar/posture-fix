@@ -1,19 +1,19 @@
 {
-    "manifest_version": 3,
-    "name": "Posture Fix",
-    "version": "1.0",
-    "author": "Arman Moztarzadeh",
-    "permissions": ["alarms", "notifications", "activeTab"],
-    "description": "Alerts you to fix your posture at random moments.",
-    "background": {
-        "service_worker": "background.js"
-    },
-    "icons": {
-        "128": "images/icon128.png",
-        "18": "images/icon18.png"
-    },
-    "action": {
-        "default_popup": "popup.html",
-        "default_title": "Posture Fix"
-    }
+  "manifest_version": 3,
+  "name": "Posture Fix",
+  "version": "1.0",
+  "author": "Arman Moztarzadeh",
+  "permissions": ["alarms", "notifications", "activeTab"],
+  "description": "Alerts you to fix your posture at random moments.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "images/icon128.png",
+    "18": "images/icon18.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Posture Fix"
+  }
 }
