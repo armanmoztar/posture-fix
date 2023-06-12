@@ -1,7 +1,7 @@
-chrome.alarms.create({ delayInMinutes: 1, periodInMinutes: 1 });
+chrome.alarms.create({ delayInMinutes: 15, periodInMinutes: 15 });
 
 chrome.alarms.onAlarm.addListener(function (alarm) {
-  if (alarm.name === "postureReminder") {
+  if (alarm.name === "postureFix") {
     chrome.notifications.create({
       type: "basic",
       iconUrl: "images/icon128.png",
