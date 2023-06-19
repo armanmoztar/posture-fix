@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,34 +8,22 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:ital@1&display=swap"
-        rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="popup.js"></script>
     <title>PostureFix</title>
-</head>
-<style>
-    h1 {
-        font-family: "Lato", sans-serif;
-        text-align: center;
-    }
-
-    h4 {
-        font-family: "Lato", sans-serif;
-        text-align: center;
-    }
-
-    p {
-        font-family: "Lato", sans-serif;
-        text-align: center;
-    }
-</style>
-<script src="background.js"></script>
-
-<body>
-    <div style="width:400px">
-        <!-- <img src="images/icon.png" alt="logo" class="center"> -->
-        <h1>PostureFix</h1>
-        <h4>Keep working! I'll alert you to keep your posture straight.<strong></strong></h4>
-        <p>Get notified every 15 minutes to check your posture!</p>
+  </head>
+  <body>
+    <div style="width: 400px">
+      <h1>PostureFix</h1>
+      <h4>
+        Keep working! I'll alert you to keep your posture straight. <br />
+      </h4>
+      <button id="pauseButton">Pause Reminders</button>
+      <p id="statusText"></p>
     </div>
-</body>
+    <script src="background.js"></script>
+  </body>
 </html>
