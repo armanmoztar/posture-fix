@@ -12,6 +12,13 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
   }
 });
 
+chrome.runtime.onInstalled.addListener(function () {
+  chrome.alarms.create("postureFix", {
+    delayInMinutes: 15,
+    periodInMinutes: 15
+  });
+});
+
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   if (message && message.action === "pauseTimer") {
     timerRunning = false;
