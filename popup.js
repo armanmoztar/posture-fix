@@ -3,45 +3,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const pauseButton = document.getElementById("pauseButton");
   const statusText = document.getElementById("statusText");
 
-  chrome.runtime.sendMessage({ action: "pauseTimer" }, function (response) {
-    isTimerRunning = response.timerRunning;
+  // Retrieve the timer state from storage
+  chrome.storage.sync.get("timerRunning", function (data) {
+    isTimerRunning = data.timerRunning !== undefined ? data.timerRunning : isTimerRunning;
     updateButtonText();
     updateStatusText();
-    console.log(
-      isTimerRunning ? "Reminders are active" : "Reminders are paused"
-    );
+    console.log(isTimerRunning ? "Reminders are active" : "Reminders are paused");
   });
 
   pauseButton.addEventListener("click", function () {
     isTimerRunning = !isTimerRunning;
     updateButtonText();
     updateStatusText();
-    chrome.runtime.sendMessage(
-      { action: "pauseTimer", timerRunning: isTimerRunning },
-      function (response) {
-        if (response && response.timerRunning) {
-          isTimerRunning = response.timerRunning;
-          updateButtonText();
-          updateStatusText();
-          console.log(
-            isTimerRunning ? "Reminders are active" : "Reminders are paused"
-          );
-        }
-      }
-    );
+    chrome.storage.sync.set({ timerRunning: isTimerRunning });
+    console.log(isTimerRunning ? "Reminders are active" : "Reminders are paused");
   });
 
   function updateButtonText() {
-    pauseButton.textContent = isTimerRunning
-      ? "Pause Reminders"
-      : "Resume Reminders";
+    pauseButton.textContent = isTimerRunning ? "Pause Reminders" : "Resume Reminders";
   }
 
   function updateStatusText() {
-    statusText.textContent = isTimerRunning
-      ? "Reminders are active"
-      : "Reminders are paused";
-      statusText.textContent = `Status: ${isTimerRunning ? "Active" : "Inactive"}`;
-      statusText.classList.toggle("inactive", !isTimerRunning);
+    statusText.textContent = `Status: ${isTimerRunning ? "Active" : "Inactive"}`;
+    statusText.classList.toggle("inactive", !isTimerRunning);
   }
 });

@@ -3,7 +3,7 @@
   "name": "Posture Fix",
   "version": "1.0",
   "author": "Arman Moztarzadeh",
-  "permissions": ["alarms", "notifications", "activeTab"],
+  "permissions": ["alarms", "notifications", "storage"],
   "background": {
     "service_worker": "background.js"
   },
