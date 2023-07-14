@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     statusText.textContent = isTimerRunning
       ? "Reminders are active"
       : "Reminders are paused";
-      statusText.classList.toggle("active", isTimerRunning);
+      statusText.textContent = `Status: ${isTimerRunning ? "Active" : "Inactive"}`;
       statusText.classList.toggle("inactive", !isTimerRunning);
   }
 });
