@@ -7,28 +7,41 @@ document.addEventListener("DOMContentLoaded", function () {
     isTimerRunning = response.timerRunning;
     updateButtonText();
     updateStatusText();
-    console.log(isTimerRunning ? "Reminders are active" : "Reminders are paused");
+    console.log(
+      isTimerRunning ? "Reminders are active" : "Reminders are paused"
+    );
   });
 
   pauseButton.addEventListener("click", function () {
     isTimerRunning = !isTimerRunning;
     updateButtonText();
     updateStatusText();
-    chrome.runtime.sendMessage({ action: "pauseTimer", timerRunning: isTimerRunning }, function (response) {
-      if (response && response.timerRunning) {
-        isTimerRunning = response.timerRunning;
-        updateButtonText();
-        updateStatusText();
-        console.log(isTimerRunning ? "Reminders are active" : "Reminders are paused");
+    chrome.runtime.sendMessage(
+      { action: "pauseTimer", timerRunning: isTimerRunning },
+      function (response) {
+        if (response && response.timerRunning) {
+          isTimerRunning = response.timerRunning;
+          updateButtonText();
+          updateStatusText();
+          console.log(
+            isTimerRunning ? "Reminders are active" : "Reminders are paused"
+          );
+        }
       }
-    });
+    );
   });
 
   function updateButtonText() {
-    pauseButton.textContent = isTimerRunning ? "Pause Reminders" : "Resume Reminders";
+    pauseButton.textContent = isTimerRunning
+      ? "Pause Reminders"
+      : "Resume Reminders";
   }
 
   function updateStatusText() {
-    statusText.textContent = isTimerRunning ? "Reminders are active" : "Reminders are paused";
+    statusText.textContent = isTimerRunning
+      ? "Reminders are active"
+      : "Reminders are paused";
+      statusText.classList.toggle("active", isTimerRunning);
+      statusText.classList.toggle("inactive", !isTimerRunning);
   }
 });
