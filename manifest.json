@@ -4,7 +4,6 @@
   "version": "1.0",
   "author": "Arman Moztarzadeh",
   "permissions": ["alarms", "notifications", "activeTab"],
-  "description": "Alerts you to fix your posture at random moments.",
   "background": {
     "service_worker": "background.js"
   },
