@@ -39,3 +39,11 @@ img {
     margin-right: auto;
     width: 10%;
 }
+
+#statusText.active {
+    color: green;
+}
+
+#statusText.inactive {
+    color: red;
+}
