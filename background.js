@@ -1,5 +1,12 @@
 let timerRunning = true;
 
+chrome.action.onClicked.addListener((tab) => {
+  chrome.scripting.executeScript({
+    target: {tabId: tab.id},
+    files: ['popup.js']
+  });
+});
+
 chrome.alarms.onAlarm.addListener(function (alarm) {
   if (alarm.name === "postureFix") {
     chrome.storage.sync.get("timerRunning", function (data) {
