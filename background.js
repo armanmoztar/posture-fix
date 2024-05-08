@@ -2,7 +2,7 @@ let timerRunning = true;
 
 chrome.action.onClicked.addListener((tab) => {
   chrome.scripting.executeScript({
-    target: {tabId: tab.id},
+    target: { tabId: tab.id },
     files: ['popup.js']
   });
 });
@@ -31,7 +31,7 @@ chrome.runtime.onInstalled.addListener(function () {
   });
 });
 
-chrome.storage.onChanged.addListener(function(changes, namespace) {
+chrome.storage.onChanged.addListener(function (changes) {
   for (let key in changes) {
     if (key === "timerRunning") {
       timerRunning = changes[key].newValue;
