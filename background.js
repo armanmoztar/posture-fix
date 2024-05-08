@@ -26,8 +26,8 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
 
 chrome.runtime.onInstalled.addListener(function () {
   chrome.alarms.create("postureFix", {
-    delayInMinutes: 30,
-    periodInMinutes: 30
+    delayInMinutes: 20,
+    periodInMinutes: 20
   });
 });
 
