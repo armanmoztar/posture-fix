@@ -1,4 +1,4 @@
-# PostureFix
+# posture-fix
 
 A Chrome extension that alerts you periodically to fix your posture.
 
