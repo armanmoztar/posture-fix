@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Posture Fix",
-  "version": "1.0",
+  "description": "An alert system to remind you to fix your posture",
+  "version": "1.0.1",
   "author": "Arman Moztarzadeh",
   "permissions": [
     "activeTab",
@@ -10,14 +11,14 @@
     "storage"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "src/background.js"
   },
   "icons": {
     "128": "images/icon128.png",
     "18": "images/icon18.png"
   },
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "src/popup.html",
     "default_title": "Posture Fix"
   }
 }
